@@ -1,0 +1,89 @@
+
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .gift-box {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .lid {
+            width: 120px;
+            height: 20px;
+            background-color: #e74c3c;
+            border-radius: 5px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .box {
+            width: 120px;
+            height: 120px;
+            background-color: #3498db;
+            border-radius: 5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ribbon {
+            width: 100px;
+            height: 20px;
+            background-color: #e74c3c;
+            border-radius: 5px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+
+        .content {
+            padding: 10px;
+            color: #fff;
+            text-align: center;
+            transform: translateY(100%);
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .gift-box.opened .content {
+            transform: translateY(0);
+        }
+    </style>
+    <title>Birthday Surprise</title>
+</head>
+<body>
+    <div class="gift-box" onclick="openGift()">
+        <div class="lid"></div>
+        <div class="box">
+            <div class="ribbon"></div>
+            <div class="content">
+                <p>🎉 Happy Birthday, Hazim Fikri! 🎂</p>
+                <p>Wishing you a fantastic day and an amazing year ahead!</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function openGift() {
+            const giftBox = document.querySelector('.gift-box');
+            giftBox.classList.add('opened');
+        }
+    </script>
+</body>
+</html>
+```
+
